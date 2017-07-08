@@ -1,0 +1,6 @@
+# Examples used to study TikZ
+/Examples/
+
+# Output files
+*.svg
+
