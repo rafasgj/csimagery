@@ -1,0 +1,42 @@
+\documentclass[a4paper,landscape]{scrartcl}
+
+\usepackage[active,tightpage]{preview}
+\usepackage{tikz}
+
+\PreviewEnvironment{tikzpicture}
+
+\usepackage{verbatim}
+\begin{comment}
+A binary search tree...
+\end{comment}
+
+\title{Binary Search Tree}
+\author{Rafael Guterres Jeffman}
+\date{28 de Maio de 2017}
+
+\tikzset{
+    treenode/.style={align=center, inner sep=5pt, text centered,
+        font=\sffamily\bfseries, circle, fill=white, draw=black}
+}
+
+\begin{document}
+
+\begin{tikzpicture}[level/.style={sibling distance=5cm,level distance=1.5cm}]
+
+\node[treenode]{20}
+    child { edge from parent[draw=none] }
+    child { node[treenode]{22}
+        child { edge from parent[draw=none] }
+        child { node[treenode]{23}
+            child { edge from parent[draw=none] }
+                child { node[treenode]{25}
+                    child { edge from parent[draw=none] }
+                    child { node[treenode]{28}
+                }
+            }
+        }
+    }
+;
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[a4paper,landscape]{scrartcl}
+
+\usepackage[active,tightpage]{preview}
+\usepackage{tikz}
+
+\PreviewEnvironment{tikzpicture}
+
+\usepackage{verbatim}
+\begin{comment}
+A binary search tree...
+\end{comment}
+
+\title{Binary Search Tree}
+\author{Rafael Guterres Jeffman}
+\date{28 de Maio de 2017}
+
+\tikzset{
+    treenode/.style={align=center, inner sep=5pt, text centered,
+        font=\sffamily\bfseries, circle, fill=white, draw=black}
+}
+
+\begin{document}
+
+\begin{tikzpicture}[level/.style={sibling distance=7cm/#1,level distance=1.5cm}]
+
+\node[treenode](a){(5,2)}
+    child { node[treenode] (b) {(1,11)}
+        child { node[treenode](c) {(4,5)}
+            child { node[treenode] (d) {(0,7)} }
+            child { edge from parent [draw=none] }
+        }
+        child { node[treenode] (e) {(5,11)}
+            child { node [treenode] (f) {(1,14)} }
+            child { edge from parent [draw=none] }
+        }
+    }
+    child { node[treenode] (g) {(8,10)}
+        child{ node[treenode] (i) {(14,6)}
+            child { node[treenode] (j) {(13,3)} }
+            child { edge from parent [draw=none] }
+        }
+        child { node[treenode] (k) {(14,11)} }
+    }
+;
+
+\node[left,color=blue,xshift=-1.3cm,yshift=0.1cm] at (a) {\huge \textbf X} ;
+\node[left,color=red,xshift=-1.3cm,yshift=0.1cm] at (b) {\huge \textbf Y} ;
+\node[left,color=blue,xshift=-1.3cm,yshift=0.1cm] at (c) {\huge \textbf X} ;
+\end{tikzpicture}
+
+\end{document}
